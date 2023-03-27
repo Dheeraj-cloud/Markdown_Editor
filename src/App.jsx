@@ -4,12 +4,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div style={{textAlign:"center"}}>
-       <h1>Markdown-Editor</h1>
-       <BrowserRouter>
+    <div className={"text-center"}>
+      <BrowserRouter>
         <Routes>
-          <Route path={"/"} Component={Containers}/>
-          <Route path={"cheatsheet"} Component={CheatSheet}/>
+          <Route path={"/"} Component={Containers} />
+          <Route path={"cheatsheet"} Component={CheatSheet} />
         </Routes>
       </BrowserRouter>
     </div>
