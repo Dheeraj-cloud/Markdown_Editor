@@ -2,6 +2,7 @@ import React from "react";
 import convertToHTML from "markdown-to-html-converter";
 import { useState } from "react";
 import { Outlet, Link } from "react-router-dom";
+import * as DOMPurify from 'dompurify';
 
 const Containers = () => {
   const [markdown, Setmarkdown] = useState("");
@@ -9,6 +10,7 @@ const Containers = () => {
   const onInput = (e) => {
     Setmarkdown(e.target.value);
     Setpreview(convertToHTML(markdown));
+    DOMPurify.sanitize(preview);
   };
 
   return (
